@@ -1,0 +1,49 @@
+{
+  "name": "ro-billing-app",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "electron-dev": "electron .",
+    "dev": "concurrently \"npm run start\" \"cd client && npm run dev\"",
+    "dist": "electron-builder",
+    "rebuild": "electron-rebuild -f -w better-sqlite3"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@electron/rebuild": "^3.7.2",
+    "concurrently": "^9.2.0",
+    "electron": "^37.2.0",
+    "electron-builder": "^26.0.12"
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.2.0"
+  },
+  "build": {
+    "appId": "com.ro.billing",
+    "productName": "RO Billing Software",
+    "files": [
+      "main.js",
+      "preload.js",
+      "productService.js",
+      "database.js",
+      "billing.db",
+      "client/dist/**/*"
+    ],
+    "directories": {
+      "output": "release"
+    },
+    "win": {
+      "target": "nsis",
+      "signAndEditExecutable": false
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}
