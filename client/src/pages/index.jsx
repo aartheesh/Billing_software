@@ -2,6 +2,7 @@ import React from "react";
 import { Tabs } from "antd";
 import ProductPage from "./ProductPage";
 import BillingPage from "./BillingPage";
+import DeliveryChallan from "./DeliveryChallan/index.jsx";
 import "./index.css"; // Assuming you have some styles in index.css
 
 function App() {
@@ -13,13 +14,18 @@ function App() {
         items={[
           {
             key: "product",
-            label: "Manage Products",
+            label: "Store Products",
             children: <ProductPage />,
           },
           {
             key: "billing",
             label: "Billing",
             children: <BillingPage />,
+          },
+          {
+            key: "deliveryChallan",
+            label: "Delivery Challan",
+            children: <DeliveryChallan />,
           },
         ]}
         tabBarGutter={32}

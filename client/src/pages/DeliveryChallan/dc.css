@@ -1,0 +1,27 @@
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #dc-print-area, #dc-print-area * {
+    visibility: visible;
+  }
+ #dc-print-area {
+    position: relative !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+    top: 0 !important;
+    left: 0 !important;
+    z-index: 9999 !important;
+    box-shadow: none !important;
+    height: 100vh !important;
+  }
+}
+
+/* Add this to your main CSS file */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
